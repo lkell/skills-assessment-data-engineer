@@ -1,0 +1,17 @@
+[tool.poetry]
+name = "skills-assessment-data-engineer"
+version = "1.0.0"
+description = "dbt project for the Cascade Data Engineer skills assessment."
+authors = ["Leo Kell <leokello@gmail.com>"]
+
+[tool.poetry.dependencies]
+python = "^3.10"
+dbt-postgres = "^1.1.1"
+
+[tool.poetry.dev-dependencies]
+sqlfluff-templater-dbt = "^1.0.0"
+prettier = "^0.0.7"
+
+[build-system]
+requires = ["poetry-core>=1.0.0"]
+build-backend = "poetry.core.masonry.api"
