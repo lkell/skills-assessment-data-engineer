@@ -42,15 +42,14 @@ indian as (
 
 pacific as (
 
-    select * from {{ ref('stg_carmen_sightings_indian') }}
+    select * from {{ ref('stg_carmen_sightings_pacific') }}
 
 ),
 
 combined as (
 
     {% for sighting_source in [
-        'africa', 'america', 'asia', 'atlantic', 'australia',
-        'europe', 'indian', 'pacific'
+        'africa', 'america', 'asia', 'atlantic', 'australia', 'europe', 'indian', 'pacific'
     ] %}
 
     select
