@@ -18,5 +18,6 @@ clean-targets:
 
 models:
   skills_assessment_data_engineer:
-    example:
+    staging:
+      +schema: stg
       +materialized: view
