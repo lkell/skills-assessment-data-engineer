@@ -23,7 +23,7 @@ models:
       - name: prob_top_behavior
         description: "The probability that one of the three most occuring behaviors was observed that month"
 
-  - name: monthly_top_agency regions
+  - name: monthly_top_agency_regions
     description:
       "Answers the question: For each month, which agency region is Carmen Sandiego most likely to be found?"
     columns:
