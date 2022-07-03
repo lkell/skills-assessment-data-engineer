@@ -1,4 +1,4 @@
-with africa_seed as (
+with australia_seed as (
 
     select * from {{ ref('seed_carmen_sightings_australia') }}
 
@@ -6,7 +6,7 @@ with africa_seed as (
 
 renamed as (
 
-    {{ rename_seed_columns('africa_seed') }}
+    {{ rename_seed_columns('australia_seed') }}
 
 )
 
