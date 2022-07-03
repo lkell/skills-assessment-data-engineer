@@ -23,26 +23,30 @@ agent_counts as (
 
 ),
 
-top_agents as (
+agent_probs as (
+
+    select
+        *,
+        times_observed / sum(times_observed) over (
+            partition by month_sighted
+        ) as proportion_observed,
+        row_number() over (
+            partition by month_sighted order by times_observed desc
+        ) as observation_number
+    from agent_counts
+
+),
+
+final as (
 
     select
         month_sighted,
         city_agent,
         times_observed,
-        times_observed / sum(
-            times_observed
-        ) over (partition by city_agent) as proportion_observed
-    from (
-
-        select
-            *,
-            row_number() over (
-                partition by city_agent order by times_observed desc
-            ) as observation_number
-        from agent_counts
-
-    ) as observation_numbers
+        proportion_observed
+    from agent_probs
     where observation_number = 1
+
 )
 
-select * from top_agents
+select * from final
