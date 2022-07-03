@@ -1,0 +1,7 @@
+# dbt paths
+target/
+dbt_packages/
+macros/
+
+# python paths
+.venv/
