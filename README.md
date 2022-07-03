@@ -1,6 +1,7 @@
 # Cascade Skills Assessment: *dbt* Data Engineer
 
-This dbt project is my submission for the Cascade Data Engineer skills assessment. The original assessment instructions can be found [here](https://github.com/cascadedebt/skills-assessment-data-engineer).
+This repository contains my submission for the Cascade Data Engineer skills assessment. The original assessment instructions can be found [here](https://github.com/cascadedebt/skills-assessment-data-engineer). All of by dbt code can be found in the `dbt/` directory. Instructions for running the dbt project can be found in `dbt/README.md`.
+
 
 ## Model Lineage and Data Modeling
 
