@@ -1,0 +1,16 @@
+version: 2
+
+macros:
+  - name: format_date_to_month
+    description: "Format a date column to the `month-num`-`month-name` format."
+    arguments:
+      - name: date_col
+        type: string
+        description: "Name of the input date column"
+
+  - name: rename_seed_columns
+    description: "Rename all columns in a sightings seed model to the required *common data dictionary*."
+    arguments:
+      - name: table
+        type: string
+        description: "Name of the input seed table"
