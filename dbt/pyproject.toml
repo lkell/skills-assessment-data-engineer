@@ -19,3 +19,4 @@ build-backend = "poetry.core.masonry.api"
 [tool.sqlfluff.core]
 dialect = "postgres"
 templater = "dbt"
+exclude_rules = "L025"  # Too restrictive when using single subquery
