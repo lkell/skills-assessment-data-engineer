@@ -1,0 +1,18 @@
+version: 2
+
+models:
+  - name: stg_carmen_sightings_all
+    description: "Concatenates sighting data from all source regions."
+    columns:
+      - name: sighting_source
+        tests:
+        - dbt_expectations.expect_column_distinct_values_to_contain_set:
+            value_set:
+              - africa
+              - america
+              - asia
+              - atlantic
+              - australia
+              - europe
+              - indian
+              - pacific
