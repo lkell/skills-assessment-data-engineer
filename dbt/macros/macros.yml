@@ -9,7 +9,9 @@ macros:
         description: "Name of the input date column"
 
   - name: rename_seed_columns
-    description: "Rename all columns in a sightings seed model to the required *common data dictionary*."
+    description:
+      "Rename all columns in a sightings seed model to the required *common data dictionary*.
+      NOTE: When using this macro, you must assume that the seed tables all use the same column order."
     arguments:
       - name: table
         type: string
