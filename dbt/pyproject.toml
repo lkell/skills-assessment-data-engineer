@@ -10,7 +10,7 @@ dbt-postgres = "^1.1.1"
 
 [tool.poetry.dev-dependencies]
 sqlfluff-templater-dbt = "^1.0.0"
-prettier = "^0.0.7"
+taskipy = "^1.10.2"
 
 [build-system]
 requires = ["poetry-core>=1.0.0"]
@@ -19,4 +19,9 @@ build-backend = "poetry.core.masonry.api"
 [tool.sqlfluff.core]
 dialect = "postgres"
 templater = "dbt"
-exclude_rules = "L025"  # Too restrictive when using single subquery
+exclude_rules = "L025" # Too restrictive when using single subquery
+
+[tool.taskipy.tasks]
+start-dev-db = { cmd = "docker-compose -f dev/docker-compose.yml -p de-skills-assessment up -d", help = "Create a container with a Postgres DB instance for local development purposes." }
+stop-dev-db = { cmd = "docker-compose -f dev/docker-compose.yml -p de-skills-assessment down", help = "Stops the local Postgres DB container." }
+dbt-dev = { cmd = "dbt --profiles-dir dev", help = "Runs dbt commands with the local `dev/` folder as --profiles-dir." }

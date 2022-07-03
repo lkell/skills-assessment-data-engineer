@@ -1,0 +1,14 @@
+skills_assessment_data_engineer:
+  outputs:
+
+    dev:
+      type: postgres
+      threads: 4
+      host: localhost
+      port: 5432
+      user: postgres
+      pass: postgres
+      dbname: carmen
+      schema: dbo
+
+  target: dev
