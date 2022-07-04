@@ -9,10 +9,7 @@ behavior_counts as (
     select
         {{ format_date_to_month('date_witness') }} as month_sighted,
         case
-            when has_weapon = cast(1 as bool)
-                and has_jacket = cast(1 as bool)
-                and has_hat = cast(0 as bool)
-                then 1
+            when has_weapon and has_jacket and not has_hat then 1
             else 0
         end as matches_behavior
     from sightings
