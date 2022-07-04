@@ -19,8 +19,9 @@
             cast(null as bool) as has_jacket,
 
             null as behavior
+        
+        limit 0
     ) as col_mapping
-    where date_witness is not null
 
     union all
 
