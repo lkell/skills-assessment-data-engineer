@@ -53,7 +53,7 @@ The analytical questions are answered below. Each answer makes use of one of the
 
 ### a. For each month, which agency region is Carmen Sandiego most likely to be found?
 
-The data table from *monthly_top_agency_regions* shows that Carmen Sandiego is most likely to be found in Kolkata or New York, depending on the month:
+The data from the **monthly_top_agency_regions** shows that Carmen Sandiego is most likely to be found in Kolkata or New York, depending on the month:
 
 |month_sighted|city_agent|times_observed|round|
 |-------------|----------|--------------|-----|
@@ -72,7 +72,7 @@ The data table from *monthly_top_agency_regions* shows that Carmen Sandiego is m
 
 ### b. Also for each month, what is the probability that Ms. Sandiego is armed AND wearing a jacket, but NOT a hat? What general observations about Ms. Sandiego can you make from this?
 
-The data table, created from the **dbo_ana.monthly_armed_jacket_no_hat_probs**, is displayed below. The probabilities of this combination of behaviors happening during a sighting is very low for each month, hovering roughly between 3% and 5%. The month with the lowest probability for this is November, which has 2.4%. The month with the highest probability of this happening is June, with 4.7%.
+The data table, created from the **monthly_armed_jacket_no_hat_probs** view, is displayed below. The probabilities of the combined behaviors is very low for each month, hovering roughly between 3% and 5%. The month with the lowest probability is November, at 2.4%. The month with the highest probability is June, at 4.7%.
 
 |month_sighted|round|
 |-------------|-----|
