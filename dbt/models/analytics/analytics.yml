@@ -2,12 +2,12 @@ version: 2
 
 models:
   - name: top_behaviors
-    description: "Answers the question: What are the three most occuring behaviors of Ms. Sandiego?"
+    description: "Answers the question: What are the three most occurring behaviors of Ms. Sandiego?"
     columns:
       - name: behavior
         description: "Short description of perpetrator behavior"
       - name: times_observed
-        description: "The number of times the associated behavrior has been observed"
+        description: "The number of times the associated behavior has been observed"
 
     tests:
       - dbt_expectations.expect_table_row_count_to_equal:
@@ -22,6 +22,10 @@ models:
         description: "The month of sighting"
       - name: prob_top_behavior
         description: "The probability that one of the three most occuring behaviors was observed that month"
+        tests:
+          - dbt_utils.accepted_range:
+              min_value: 0
+              max_value: 1
 
   - name: monthly_top_agency_regions
     description:
@@ -35,13 +39,21 @@ models:
         description: "Total number of times the top agency region is associated with the sighting that month"
       - name: proportion_observed
         description: "Proportion of sightings associated with the top agency region that month"
+        tests:
+          - dbt_utils.accepted_range:
+              min_value: 0
+              max_value: 1
   
   - name: monthly_armed_jacket_no_hat_probs
     description:
-      "Ansewrs the questions: For each month, what is the probability that Ms. Sandiego is armed
+      "Answers the questions: For each month, what is the probability that Ms. Sandiego is armed
       AND wearing a jacket, but NOT a hat?"
     columns:
       - name: month_sighted
         description: "The month of sighting"
       - name: behavior_prob
         description: "Proportion of times the Ms. Sandiego is armed and wearing a jacket, but not a hat"
+        tests:
+          - dbt_utils.accepted_range:
+              min_value: 0
+              max_value: 1
